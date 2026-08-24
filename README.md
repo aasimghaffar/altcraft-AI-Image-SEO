@@ -1,0 +1,1 @@
+# altcraft-AI-Image-SEO
