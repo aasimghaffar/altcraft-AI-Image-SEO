@@ -1,111 +1,156 @@
-=== AltCraft AI – Image SEO & Auto Alt Text Generator ===
+=== Cubix AI Article Generator ===
 Contributors: cubixsol
-Tags: alt text, image seo, accessibility, webp, woocommerce
+Tags: ai, content generator, ai writer, ai chat, seo
 Requires at least: 6.2
-Tested up to: 7.1
+Tested up to: 7.0.3
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-AI-written image ALT text, titles and captions (Google Gemini or OpenAI) with a bulk scanner, nightly cron, WebP copies and WooCommerce context.
+Write, rewrite, and optimise content with AI — right inside your post editor. Free-tier engines, an AI chat studio, and a design you'll love.
 
 == Description ==
 
-**AltCraft AI** looks at every image in your Media Library and writes accurate, natural ALT text for it – the kind that helps screen-reader users and ranks in Google Images. Bring your own Google Gemini or OpenAI API key; everything else is included, with no upsells.
+**Cubix AI Article Generator turns your WordPress dashboard into a complete AI writing studio — without a monthly subscription.**
 
-= What it does =
+Connect a free API key (Groq, Google Gemini, OpenRouter, and Mistral all offer genuinely free tiers with a two-minute signup and no credit card) and start generating titles, full articles, excerpts, outlines, FAQs, SEO keywords, and more — directly where you write.
 
-* **Generate on upload** – new images get ALT text (and optionally a title and caption) during the upload, so it is already there when you insert the image in the editor.
-* **Media SEO Table** – a dedicated screen listing every image with its ALT text, title and caption. Edit inline, filter by *Missing ALT* / *Optimized* / *WooCommerce*, search the whole library, and paginate through thousands of images.
-* **Bulk Vision Scanner** – process the entire library from one screen with a live progress bar, counters and a log. Stops cleanly, retries when the provider rate-limits you, and skips images that already have manual ALT text (or rewrites everything, if you ask it to).
-* **Media Library integration** – an *AI Alt Text* column with a Generate button in the list view, and a *Generate ALT text with AI* button inside the media modal and the attachment edit screen.
-* **Nightly background scan** – WP-Cron quietly fixes images that are still missing ALT text, in small batches that respect shared-hosting time limits.
-* **WebP copies** – creates a lighter `.webp` version of the original and every thumbnail size (originals are never modified) and can optionally serve them to browsers that support WebP. Copies are removed when you delete the image.
-* **WooCommerce context** – product images are described with the product title, categories and SKU in mind (featured image and gallery images are both detected). Add store or brand keywords and the AI uses them only where they fit.
-* **Your rules** – choose what the AI looks at (the image and its filename, the image only, or the filename only without ever sending the image), the ALT style (concise SEO, descriptive accessibility or keyword focused), the output language (30+ languages) and whether existing ALT text may be overwritten.
-* **Two providers, current models** – Google Gemini (3.7 / 3.6 / 3.5 Flash, Flash-Lite, 2.5) and OpenAI (GPT-5.6 Sol / Terra / Luna and older models), with a custom model field so you are never stuck when a provider retires a model, plus a *Test connection* button.
-* **Developer friendly** – filters for the prompt, the result, the context, the model and the image size; an action after every generation.
+= ✍️ Twelve writing tasks in your editor =
 
-= Privacy =
+A beautifully designed panel appears right in the post editor:
 
-Only a downscaled copy of the image (max 1024 px) and a little context (the related product/post title, product categories and SKU, your brand keywords, the filename) is sent to the AI provider you choose. In "Filename only" mode the image itself is never sent. No user data, no site URL and no other content leaves your site. Nothing is sent until you add an API key. The plugin does not phone home to Cubixsol and contains no tracking.
+* **Write** — full articles, post titles, excerpts & meta descriptions, structured outlines, FAQ sections.
+* **Refine** — rewrite & improve, expand & enrich, summarise, or translate your existing draft. One click sends your current post as context.
+* **Optimise** — SEO keyword suggestions, tag ideas, and conversion-focused call-to-action paragraphs.
 
-== External services ==
+Every result shows a live word count with Regenerate, Expand, Copy, and one-click **Use it** — which inserts content into the Block Editor or Classic Editor, sets titles, or fills the excerpt field automatically.
 
-This plugin connects to third-party AI services to analyse your images. It only does so after you have entered an API key for one of them and only when ALT text is generated (on upload, from the Generate buttons, from the bulk scanner or from the nightly cron).
+= 💬 AI Studio — a real chat workspace =
 
-**Google Gemini API** (Google LLC) – used when "Google Gemini" is the selected provider. The plugin sends a resized copy of the image (omitted in "Filename only" mode), the generation prompt (including the related post/product title, categories, SKU, brand keywords and filename hint) and your API key to `https://generativelanguage.googleapis.com/`.
-[Terms of service](https://ai.google.dev/gemini-api/terms) · [Privacy policy](https://policies.google.com/privacy)
+A full multi-conversation chat experience inside wp-admin:
 
-**OpenAI API** (OpenAI, L.L.C.) – used when "OpenAI" is the selected provider. The plugin sends the same data to `https://api.openai.com/`. Requests are made with `store: false`, so OpenAI does not retain them for its stored-responses feature.
-[Terms of use](https://openai.com/policies/terms-of-use) · [Privacy policy](https://openai.com/policies/privacy-policy)
+* Start unlimited new chats; each is titled automatically from your first message.
+* Conversation history sidebar with one-click switching.
+* Delete any single chat, or everything with one button.
+* Conversations are private per user and auto-delete after 10 days.
+* Switch AI engines mid-conversation.
 
-You are responsible for the usage costs and for complying with the provider's terms.
+= 🔌 Seven AI engines — including truly free tiers =
+
+* **Groq** — very fast Llama, Qwen, and GPT-OSS models. Generous free tier, no credit card.
+* **Google Gemini** — AI Studio keys include free usage.
+* **OpenRouter** — hundreds of models with one key; the smart "Auto — free models" option finds whatever is free right now, automatically.
+* **Mistral AI** — free experiment tier.
+* **OpenAI**, **Anthropic Claude**, **DeepSeek** — premium pay-as-you-go quality when you want it.
+
+Every engine card has a direct "Get a key" link and a one-click connection test. Keys are **encrypted at rest** using your site's own authentication salts and are never included in settings exports.
+
+= 🎛️ Built for real teams =
+
+* Choose which post types show the AI panel.
+* Set the minimum role allowed to use AI — from Contributors to Administrators only.
+* Usage dashboard: total generations, words written, monthly activity, per-engine breakdown.
+* Recent-generations history in the editor to re-run earlier prompts.
+* Fully editable prompt library — ship your own starter prompts to your writers.
+* Default tone (9 options), length presets, output language, and creativity control.
+* Move a finished configuration between sites with JSON export and import — API keys are never included, so each site keeps its own.
+
+= 🔒 Privacy first =
+
+No accounts. No middleman servers. No tracking. Your prompts go directly from **your server** to the AI provider **you** chose — nothing passes through us, and site visitors never trigger any request. See the External Services section for exactly what is sent where.
+
+= 🧑‍💻 Developer friendly =
+
+Clean, object-oriented, fully prefixed code with filters for everything: `cxai_providers`, `cxai_modes`, `cxai_prompt_templates`, `cxai_system_prompt`, `cxai_user_prompt`, `cxai_generated_content`, and `cxai_create_provider` to register custom engines.
+
+== External Services ==
+
+This plugin connects to third-party AI APIs to generate content, power the AI Studio chat, and test API keys. **No data is transmitted anywhere until a logged-in user presses Generate, Test connection, or sends a chat message.** When they do, the prompt text — and the current post content, only when the context option is used — is sent to the single engine selected for that request:
+
+* **Groq** — sent to `https://api.groq.com`. [Terms](https://groq.com/terms-of-use), [Privacy Policy](https://groq.com/privacy-policy)
+* **Google (Gemini)** — sent to `https://generativelanguage.googleapis.com`. [Terms of Service](https://policies.google.com/terms), [Privacy Policy](https://policies.google.com/privacy)
+* **OpenRouter** — sent to `https://openrouter.ai`. [Terms](https://openrouter.ai/terms), [Privacy Policy](https://openrouter.ai/privacy)
+* **Mistral AI** — sent to `https://api.mistral.ai`. [Terms](https://mistral.ai/terms), [Privacy Policy](https://mistral.ai/terms#privacy-policy)
+* **OpenAI** — sent to `https://api.openai.com`. [Terms of Use](https://openai.com/policies/terms-of-use), [Privacy Policy](https://openai.com/policies/privacy-policy)
+* **Anthropic (Claude)** — sent to `https://api.anthropic.com`. [Terms of Service](https://www.anthropic.com/legal/consumer-terms), [Privacy Policy](https://www.anthropic.com/legal/privacy)
+* **DeepSeek** — sent to `https://api.deepseek.com`. [Terms](https://platform.deepseek.com/downloads/DeepSeek%20Open%20Platform%20Terms%20of%20Service.html), [Privacy Policy](https://platform.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.html)
+
+You are responsible for complying with the terms of the provider(s) you choose to use. Requests are made server-side by logged-in users only; no site visitor data is ever transmitted, and the plugin collects no analytics of its own.
 
 == Installation ==
 
-1. Upload the `altcraft-ai-image-seo` folder to `/wp-content/plugins/`, or install the plugin through the WordPress Plugins screen.
+1. Install through **Plugins → Add New** (search "Cubix AI Article Generator"), or upload the plugin ZIP.
 2. Activate the plugin.
-3. Go to **AltCraft AI → Settings & API**, choose a provider, paste your API key, click *Test connection* and save.
-4. Upload an image – or open **AltCraft AI → Bulk Scanner** to fix your existing library.
+3. Open **Cubix AI → Settings → AI Engines**, click "Get a key" on the Groq card (free, two minutes, no credit card), paste your key, and press **Test connection**.
+4. Open any post — the Cubix AI panel is waiting in the sidebar — or visit **Cubix AI → AI Studio** to chat.
 
 == Frequently Asked Questions ==
 
-= Where do I get an API key? =
+= Do I need to pay for anything? =
 
-Google Gemini keys are created in Google AI Studio (aistudio.google.com/apikey) and include a free tier. OpenAI keys are created at platform.openai.com/api-keys and are billed per use.
+No. Groq, Google Gemini, OpenRouter, and Mistral all offer free API tiers that work with this plugin — free key, no credit card, two-minute signup. Direct links are on the AI Engines tab. OpenAI, Claude, and DeepSeek are optional pay-as-you-go choices.
 
-= Does it overwrite ALT text I wrote myself? =
+= Which engine should I choose? =
 
-Not unless you tell it to. Automatic generation (upload and nightly cron) only fills empty ALT text by default. Turn on *Overwrite existing ALT* in the settings, or choose *Every image* in the bulk scanner, to rewrite everything. The Generate buttons always regenerate the image you clicked.
+Start with **Groq**: it is extremely fast and its free tier comfortably covers day-to-day blogging. Add Gemini or OpenRouter as alternates. For the highest long-form quality, Claude and OpenAI are excellent paid options.
 
-= Which image is sent to the AI? =
+= Where are my API keys stored? =
 
-A copy no larger than 1024 px on its longest side, usually one of the thumbnail sizes WordPress already created. Your original file is never uploaded. Use the `altcraft_ai_max_image_dimension` filter to change the size.
+Encrypted in your own WordPress database using AES-256 with a key derived from your site's authentication salts. Keys are never displayed once saved, never exported, and never sent anywhere except to their own provider.
 
-= Can I avoid sending my images to the AI at all? =
+= Is my content used to train AI models? =
 
-Yes. Set *What the AI looks at* to *Filename only*. The plugin then sends just the cleaned-up filename and the related post/product title, so the AI can only describe what the name implies. Descriptive filenames (`red-leather-handbag.jpg`) work well; camera names (`IMG_4821.jpg`) on images that are not attached to anything are skipped with a clear message.
+That depends on the provider you choose and your agreement with them — the plugin itself stores nothing outside your site and sends prompts only to your selected provider. Review the provider policies linked in the External Services section.
 
-= I get "The AI provider did not respond within 60 seconds". =
+= Who on my team can use it? =
 
-The image upload from your server to the provider took too long, usually because the image is large and the hosting has limited outbound bandwidth. The plugin normally sends a small thumbnail; if WordPress could not create thumbnails for that image (common with very large PNGs on low-memory hosting) the original file is sent instead. Raise the request timeout under *Settings → Advanced*, regenerate thumbnails for the image, or upload a smaller copy.
+You decide: pick the minimum role (Contributor up to Administrator only) on the Placement & Access tab. Users must also be able to edit the specific post they are generating for.
 
-= The bulk scanner says "model not found". =
+= Does it work with the Classic Editor and custom post types? =
 
-The provider retired the model you selected. Open the settings, pick a newer model from the list (or enter any model ID in the custom field), test the connection and save.
+Yes to both. Content inserts through TinyMCE or the plain text editor, titles and excerpts fill their proper fields, and every public post type can be toggled on the Placement & Access tab.
 
-= I get "cURL error 28 … timed out" but the connection test works. =
+= What happens to AI Studio chats? =
 
-Real generation uploads a copy of your image; normally a 768–1024 px thumbnail. When WordPress could not create thumbnails for an image (large PNGs on hosts with a low memory limit, or servers without GD/Imagick) the plugin sends the original instead, which can be several megabytes and may not upload within the timeout. Check *Settings → Advanced → Server capabilities*, regenerate thumbnails for the affected images (or raise the PHP memory limit), or increase *Request timeout* under Advanced. The connection test now sends a small image through the same pipeline, so a passing test means the key, model and vision support are all fine.
+They are private to each user, stored in your own database, and automatically deleted after 10 days (this is shown in the Studio). Users can also delete any chat, or all chats, at any time.
 
-= Does WebP delivery work with caching plugins and CDNs? =
+= Does the plugin phone home or collect analytics? =
 
-WebP copies are always created safely. *Serving* them swaps image URLs when the visitor's browser sends `Accept: image/webp`, so a full-page cache must vary its cache by the Accept header (the plugin sends a `Vary: Accept` header to help). If your CDN already converts images to WebP, leave delivery off.
-
-= Can I hard-code the API key in wp-config.php? =
-
-Yes: `add_filter( 'altcraft_ai_api_key', function ( $key, $provider ) { return 'gemini' === $provider ? 'YOUR-KEY' : $key; }, 10, 2 );`
-
-= What happens when I uninstall the plugin? =
-
-Settings, transients and scheduled events are always removed. Generated ALT text, titles and captions stay in your Media Library. WebP copies and generation logs are deleted only if you enable *Clean up on uninstall* in the Advanced tab first.
+No. There is no telemetry, no external account, and no middleman API. Your server talks directly to the AI provider you configured — nothing else.
 
 == Screenshots ==
 
-1. Settings & API – provider, model, test connection and coverage statistics.
-2. Media SEO Table – inline editing, filters and search across the whole library.
-3. Bulk Vision Scanner – live progress, counters and log.
-4. The Generate button inside the media modal.
-5. The AI Alt Text column in the Media Library list view.
+1. Overview — usage statistics, per-engine breakdown and a live system status check.
+2. AI Engines — seven providers with encrypted keys, model pickers and one-click connection tests.
+3. Writing Defaults — tone, length, output language and creativity for every generation.
+4. Placement & Access — choose the post types the panel appears on and the minimum role allowed to generate.
+5. Advanced — move settings between sites with JSON export/import, and control what happens on delete.
+6. About — a plain-language data and privacy summary plus the developer hooks.
+7. AI Studio — a multi-conversation chat workspace with history, per-chat delete and engine switching.
+8. The Cubix AI panel in the post editor, with one-click prompt starters.
+9. Prompt Library — replace the built-in starters with your team's own prompts.
+10. Any response expands to a full-screen reading view.
+11. Generated content with a live word count, Regenerate, Copy and one-click Use it.
 
 == Changelog ==
 
+= 1.0.2 =
+* Long answers that reach the output limit are now continued automatically and stitched together cleanly.
+* The editor panel and AI Studio both say plainly when a reply was cut short, with a link straight to the setting that controls it.
+* AI Studio replies can be continued with one click.
+* Fixed API keys being re-encrypted on save, which caused authentication failures on some engines.
+* Raised the default and minimum output length so long articles are not truncated out of the box.
+
+= 1.0.1 =
+* Fixed the expanded response view being clipped inside the Block Editor meta box.
+* More accurate word-count adherence for the length presets.
+* Clearer, verbatim error messages from every AI engine.
+
 = 1.0.0 =
-* Initial release.
+* Initial release: 12 editor writing tasks, 7 AI engines with free-tier options, AI Studio multi-chat workspace, usage statistics, editable prompt library, role-based access, encrypted key storage, and settings export/import.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial release.
+= 1.0.2 =
+Recommended: long articles now finish instead of stopping mid-sentence, and key-saving is fixed.
